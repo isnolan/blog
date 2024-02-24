@@ -1,3 +1,6 @@
+#
+# 打包容器
+#
 FROM node:lts-alpine as builder
  
 # 设置工作目录
@@ -12,7 +15,9 @@ RUN pnpm install
 RUN pnpm run build
 
 
- 
+#
+# 运行容器
+#
 FROM node:lts-alpine
 
 RUN apk update && apk upgrade
