@@ -13,6 +13,8 @@ const withMDX = nextMDX({
     remarkPlugins: [remarkGfm],
     rehypePlugins: [rehypePrism],
   },
+  output: 'export',
+  distDir: 'dist',
 })
 
 export default withMDX(nextConfig)

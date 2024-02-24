@@ -1,0 +1,16 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.alwaysShowStatus": true,
+  "editor.formatOnSave": true,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "files.associations": {
+    "*.env*": "properties",
+    "*.wxml": "html"
+  },
+  "beautify.config": {
+    "brace_style": "collapse-preserve-inline",
+    "wrap_line_length": 300
+  }
+}
