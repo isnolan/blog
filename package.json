@@ -6,7 +6,8 @@
     "dev": "next dev --port 3900",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "gh-pages -d dist"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
@@ -37,6 +38,7 @@
   "devDependencies": {
     "eslint": "^8.56.0",
     "eslint-config-next": "^14.0.4",
+    "gh-pages": "^6.1.1",
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "sharp": "0.33.1"

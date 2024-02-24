@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
+  distDir: 'dist',
 }
 
 const withMDX = nextMDX({
@@ -13,8 +14,6 @@ const withMDX = nextMDX({
     remarkPlugins: [remarkGfm],
     rehypePlugins: [rehypePrism],
   },
-  output: 'export',
-  distDir: 'dist',
 })
 
 export default withMDX(nextConfig)
