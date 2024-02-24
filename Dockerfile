@@ -12,6 +12,7 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 # workdir
 WORKDIR /app
 ADD dist/ ./ 
+COPY .next ./
 
 
 # production
@@ -19,7 +20,7 @@ ENV NODE_ENV=production
 
 RUN npm install -g pnpm 
 RUN pnpm install --ignore-scripts
-RUN pnpm run build
+# RUN pnpm run build
 
 EXPOSE 3000
 ENTRYPOINT ["pnpm", "start"]
