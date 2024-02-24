@@ -6,7 +6,7 @@ stages:
 
  
 build:
-  stage: deploy
+  stage: build
   image: docker:20.10.17-dind
   tags:
     - node.js
