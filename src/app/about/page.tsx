@@ -122,11 +122,11 @@ export default function About() {
             </SocialLink>
 
             <SocialLink
-              href="mailto:yhostc@gmail.com"
+              href="mailto:nolan@icloud.com"
               icon={MailIcon}
               className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
             >
-              nolan@draftai.ai
+              nolan@icloud.com
             </SocialLink>
           </ul>
         </div>
