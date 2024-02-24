@@ -34,7 +34,7 @@ RUN npm install -g pnpm
 COPY --from=builder /app/package.json .
 COPY --from=builder /app/next.config.mjs . 
 # COPY --from=builder .next ./
-COPY --from=builder /app/node_modules .
+COPY --from=builder /app/node_modules ./node_modules
 
 # 暴露端口
 EXPOSE 3000
