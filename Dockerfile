@@ -10,7 +10,6 @@ COPY . .
 RUN npm i pnpm -g
 RUN pnpm install
 RUN pnpm run build
-RUN ls -l .next
 
 
  
