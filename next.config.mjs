@@ -6,6 +6,9 @@ import remarkGfm from 'remark-gfm'
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   distDir: 'dist',
+  experimental: {
+    // Correct or remove the "images" key
+  },
 }
 
 const withMDX = nextMDX({
