@@ -72,7 +72,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: isnolan/blog:latest,isnolan/blog:${{ github.run_id }}
+          tags: ${{github.imageid}}:${{ github.run_id }}
 
       - name: Docker logout
         run: docker logout

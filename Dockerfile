@@ -19,7 +19,7 @@ ENV NODE_ENV=production
 
 RUN npm install -g pnpm 
 RUN pnpm install --ignore-scripts
-# RUN pnpm run build
+RUN pnpm run build
 
 EXPOSE 3000
 ENTRYPOINT ["pnpm", "start"]
