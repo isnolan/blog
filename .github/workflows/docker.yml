@@ -41,6 +41,10 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+      - name: Copy package.json and node_modules to dist
+        run: |
+          cp package.json dist/
+          cp -r node_modules dist/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

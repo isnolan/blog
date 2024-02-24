@@ -23,7 +23,7 @@ build:
     - pnpm install
     - pnpm run build
     - cp package.json dist/
-    - cp -r node_modules dist/
+    - cp pnpm-lock.yaml dist/
   artifacts:
     paths:
       - dist
