@@ -1,26 +1,38 @@
+FROM node:lts-alpine as builder
+ 
+# 设置工作目录
+WORKDIR /app
+
+# 复制项目文件
+COPY . .
+
+# 安装依赖
+RUN npm i pnpm -g
+RUN pnpm install
+RUN pnpm run build
+
+
+ 
 FROM node:lts-alpine
 
-# Essentials
-# RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
-# RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.cloud.tencent.com/g' /etc/apk/repositories
 RUN apk update && apk upgrade
-
 RUN apk add -U tzdata
 ENV TZ="Asia/Shanghai"
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
  
-# workdir
 WORKDIR /app
-ADD dist/ ./ 
-COPY .next ./
 
+# 安装pnpm
+RUN npm install -g pnpm
 
-# production
-ENV NODE_ENV=production 
+# 仅复制构建产物和生产依赖
+COPY --from=builder /app/next.config.js ./next.config.js
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
 
-RUN npm install -g pnpm 
-RUN pnpm install --ignore-scripts
-# RUN pnpm run build
-
+# 暴露端口
 EXPOSE 3000
-ENTRYPOINT ["pnpm", "start"]
+
+# 启动服务
+CMD ["pnpm", "start"]
