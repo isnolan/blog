@@ -31,8 +31,7 @@ WORKDIR /app
 RUN npm install -g pnpm
 
 # 仅复制构建产物和生产依赖
-COPY --from=builder /app/next.config.js .
-COPY --from=builder /app/public .
+COPY --from=builder /app/next.config.mjs . 
 COPY --from=builder .next ./
 COPY --from=builder /app/node_modules .
 
