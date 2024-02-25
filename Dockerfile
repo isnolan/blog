@@ -13,6 +13,7 @@ COPY . .
 RUN npm i pnpm -g
 RUN pnpm install --production
 RUN pnpm run build
+RUN ls -l
 
 #
 # 运行容器
