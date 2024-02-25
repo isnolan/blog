@@ -11,7 +11,7 @@ COPY . .
 
 # 安装依赖
 RUN npm i pnpm -g
-RUN pnpm install
+RUN pnpm install --production
 RUN pnpm run build
 
 #
