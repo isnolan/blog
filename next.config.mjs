@@ -8,7 +8,7 @@ const base = process.env.NEXT_PUBLIC_BASE_PATH || ''
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
-  basePath: base || '',
+  // basePath: base || '',
   assetPrefix: base || '',
   // output: 'export',
   // distDir: 'dist'
