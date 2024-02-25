@@ -2,11 +2,14 @@ import rehypePrism from '@mapbox/rehype-prism'
 import nextMDX from '@next/mdx'
 import remarkGfm from 'remark-gfm'
 
+
+const base = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
-  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  basePath: base || '',
+  assetPrefix: base ? `${base}/` : '',
   // output: 'export',
   // distDir: 'dist'
 }
