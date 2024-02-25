@@ -6,7 +6,7 @@ ENV TZ="Asia/Shanghai"
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
  
 WORKDIR /app
-
+COPY . .
 # 安装pnpm
 RUN npm install -g pnpm
 RUN pnpm install
