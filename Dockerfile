@@ -9,6 +9,7 @@ WORKDIR /app
 
 # 安装pnpm
 RUN npm install -g pnpm
+RUN pnpm install
 RUN pnpm run build
 
 
