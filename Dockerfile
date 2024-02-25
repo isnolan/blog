@@ -13,7 +13,6 @@ COPY . .
 RUN npm i pnpm -g
 RUN pnpm install
 RUN pnpm run build
-RUN ls -l ./
 
 #
 # 运行容器
@@ -35,6 +34,7 @@ COPY --from=builder /app/package.json .
 COPY --from=builder /app/next.config.mjs . 
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/.env.production ./.env
 
 # 暴露端口
 EXPOSE 3000
